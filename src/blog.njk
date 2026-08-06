@@ -1,0 +1,26 @@
+---
+layout: base.njk
+title: "お役立ちブログ｜note・Threads運用のノウハウ"
+description: "BtoB企業のnote運用・Threads運用に役立つノウハウ記事を配信中。運用でつまずきやすいポイントや改善のコツを発信しています。"
+---
+<section class="page-header">
+  <div class="wrap">
+    <h1>ブログ</h1>
+    <p class="lead">このブログでは、BtoB企業がnote・Threadsを運用する上で押さえておきたいポイントを発信しています。運用代行を検討中の方はもちろん、自社での運用にお悩みの担当者の方にも参考にしていただける内容を心がけています。更新のたびにこのページに追加していきますので、ぜひ定期的にチェックしてみてください。</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="blog-list">
+    {% for post in collections.blogPosts %}
+      <article class="blog-card">
+        <h2><a href="{{ post.url }}">{{ post.data.title }}</a></h2>
+        <p class="blog-date">{{ post.data.date | date("yyyy年M月d日") }}</p>
+        <p>{{ post.data.description }}</p>
+        <a href="{{ post.url }}">続きを読む →</a>
+      </article>
+    {% endfor %}
+    </div>
+  </div>
+</section>

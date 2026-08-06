@@ -1,0 +1,21 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "src/images/uploads"
+public_folder: "/images/uploads"
+
+collections:
+  - name: "blog"
+    label: "ブログ記事"
+    folder: "src/blog"
+    create: true
+    slug: "{{slug}}"
+    extension: "md"
+    format: "frontmatter"
+    fields:
+      - { label: "レイアウト", name: "layout", widget: "hidden", default: "post.njk" }
+      - { label: "タイトル", name: "title", widget: "string" }
+      - { label: "メタディスクリプション（検索結果に出る要約文）", name: "description", widget: "text" }
+      - { label: "公開日", name: "date", widget: "datetime" }
+      - { label: "本文", name: "body", widget: "markdown" }

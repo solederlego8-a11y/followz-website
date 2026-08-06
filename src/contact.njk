@@ -1,0 +1,62 @@
+---
+layout: base.njk
+title: "お問い合わせ｜note・Threads運用代行 フォローズ"
+description: "note運用代行・Threads運用代行に関するご相談・お見積りのご依頼はこちらから。担当者より2営業日以内にご返信します。"
+---
+<section class="page-header">
+  <div class="wrap wrap-narrow">
+    <h1>お問い合わせ</h1>
+    <p class="lead">
+      note運用代行・Threads運用代行に関するご相談、お見積りのご依頼、サービス内容についてのご質問など、お気軽にお問い合わせください。「まだ何をどう頼めばいいか分からない」という段階でのご相談も歓迎します。
+    </p>
+    <p>
+      以下のフォームに必要事項をご入力の上、送信してください。担当者より<strong>2営業日以内</strong>にメールにてご返信いたします（土日祝を挟む場合は返信が前後することがあります）。
+    </p>
+    <p>
+      入力いただいた情報は、お問い合わせへの対応以外の目的では使用しません。詳しくは<a href="/privacy/">プライバシーポリシー</a>をご確認ください。
+    </p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap wrap-narrow">
+    <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thanks/" class="contact-form">
+      <input type="hidden" name="form-name" value="contact">
+      <p class="hidden-field">
+        <label>入力しないでください<input name="bot-field"></label>
+      </p>
+
+      <div class="form-row">
+        <label for="company">会社名<span class="required">必須</span></label>
+        <input type="text" id="company" name="company" required>
+      </div>
+
+      <div class="form-row">
+        <label for="name">ご担当者名<span class="required">必須</span></label>
+        <input type="text" id="name" name="name" required>
+      </div>
+
+      <div class="form-row">
+        <label for="email">メールアドレス<span class="required">必須</span></label>
+        <input type="email" id="email" name="email" required>
+      </div>
+
+      <div class="form-row">
+        <label for="phone">電話番号<span class="optional">任意</span></label>
+        <input type="tel" id="phone" name="phone">
+      </div>
+
+      <div class="form-row">
+        <label for="address">ご住所<span class="optional">任意</span></label>
+        <input type="text" id="address" name="address">
+      </div>
+
+      <div class="form-row">
+        <label for="message">お問い合わせ内容<span class="required">必須</span></label>
+        <textarea id="message" name="message" rows="6" required></textarea>
+      </div>
+
+      <button type="submit" class="btn">送信する</button>
+    </form>
+  </div>
+</section>

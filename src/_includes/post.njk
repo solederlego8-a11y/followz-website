@@ -1,0 +1,15 @@
+---
+layout: base.njk
+---
+<section class="page-header">
+  <div class="wrap wrap-narrow">
+    <p class="blog-date">{{ date | date("yyyy年M月d日") }}</p>
+    <h1>{{ title }}</h1>
+  </div>
+</section>
+<section class="section">
+  <div class="wrap wrap-narrow post-body">
+    {{ content | safe }}
+    <p class="post-back"><a href="/blog/">← ブログ一覧に戻る</a></p>
+  </div>
+</section>
