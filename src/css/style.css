@@ -689,6 +689,15 @@ ul li { margin-bottom: 6px; }
 .cta-note { margin-top: 18px; color: #9aa4bb; font-size: .88rem; }
 .section-cta { margin-top: 34px; }
 
+/* visual panel (generated diagrams) */
+.visual-panel { margin: 0 0 32px; text-align: center; }
+.visual-panel img {
+  max-width: 560px;
+  width: 100%;
+  border-radius: var(--radius);
+  box-shadow: 0 30px 60px -30px rgba(10,22,40,0.35);
+}
+
 @media (max-width: 900px) {
   .hero-inner { grid-template-columns: 1fr; }
   .hero-visual { flex-direction: row; flex-wrap: wrap; }
