@@ -15,18 +15,29 @@
 <meta property="og:image" content="{{ site.url }}{{ site.ogImage }}">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="/images/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700;800&family=Zen+Kaku+Gothic+New:wght@500;700;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
 <header class="site-header">
   <div class="wrap">
-    <a class="brand" href="/">{{ site.name }}</a>
+    <a class="brand" href="/">
+      <span class="brand-mark" aria-hidden="true">F</span>
+      <span class="brand-text">{{ site.name }}</span>
+    </a>
+    <input type="checkbox" id="nav-toggle" class="nav-toggle-input">
+    <label for="nav-toggle" class="nav-toggle" aria-label="メニュー">
+      <span></span><span></span><span></span>
+    </label>
     <nav class="site-nav">
+      <a href="/about/">会社概要</a>
       <a href="/service/">サービス</a>
       <a href="/pricing/">料金</a>
       <a href="/blog/">ブログ</a>
       <a href="/faq/">FAQ</a>
-      <a href="/contact/" class="cta">お問い合わせ</a>
+      <a href="/contact/" class="cta">無料相談</a>
     </nav>
   </div>
 </header>
@@ -36,32 +47,32 @@
 </main>
 
 <footer class="site-footer">
+  <div class="wrap footer-grid">
+    <div class="footer-about">
+      <p class="footer-brand"><span class="brand-mark" aria-hidden="true">F</span>{{ site.name }}</p>
+      <p class="footer-slogan">{{ site.slogan }}</p>
+    </div>
+    <div class="footer-col">
+      <p class="footer-heading">サービス</p>
+      <nav class="footer-nav">
+        <a href="/service/">サービス内容</a>
+        <a href="/pricing/">料金</a>
+        <a href="/blog/">ブログ</a>
+        <a href="/faq/">FAQ</a>
+      </nav>
+    </div>
+    <div class="footer-col">
+      <p class="footer-heading">会社情報</p>
+      <nav class="footer-nav">
+        <a href="/about/">会社概要</a>
+        <a href="/contact/">お問い合わせ</a>
+        <a href="/privacy/">プライバシーポリシー</a>
+      </nav>
+    </div>
+  </div>
   <div class="wrap">
-    <p class="footer-brand">{{ site.name }}</p>
-    <p class="footer-slogan">{{ site.slogan }}</p>
-    <nav class="footer-nav">
-      <a href="/">トップ</a>
-      <a href="/service/">サービス</a>
-      <a href="/pricing/">料金</a>
-      <a href="/blog/">ブログ</a>
-      <a href="/faq/">FAQ</a>
-      <a href="/contact/">お問い合わせ</a>
-      <a href="/privacy/">プライバシーポリシー</a>
-    </nav>
     <p class="copyright">&copy; {{ "now" | date("yyyy") }} {{ site.name }}</p>
   </div>
 </footer>
-<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-<script>
-if (window.netlifyIdentity) {
-  window.netlifyIdentity.on("init", (user) => {
-    if (!user) {
-      window.netlifyIdentity.on("login", () => {
-        document.location.href = "/admin/";
-      });
-    }
-  });
-}
-</script>
 </body>
 </html>

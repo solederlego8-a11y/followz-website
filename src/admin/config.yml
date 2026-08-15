@@ -1,6 +1,9 @@
 backend:
-  name: git-gateway
+  name: github
+  repo: solederlego8-a11y/followz-website
   branch: main
+  base_url: https://followz-agency.netlify.app
+  auth_endpoint: /.netlify/functions/auth
 
 media_folder: "src/images/uploads"
 public_folder: "/images/uploads"
