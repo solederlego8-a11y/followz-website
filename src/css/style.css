@@ -694,9 +694,97 @@ ul li { margin-bottom: 6px; }
 .visual-panel img {
   max-width: 560px;
   width: 100%;
+  height: auto;
   border-radius: var(--radius);
   box-shadow: 0 30px 60px -30px rgba(10,22,40,0.35);
 }
+
+/* service packages */
+.package-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 8px; align-items: stretch; }
+.package-card {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 30px 26px;
+  display: flex;
+  flex-direction: column;
+}
+.package-card h3 { margin: 12px 0 18px; }
+.package-detail { margin: 0 0 24px; flex-grow: 1; }
+.package-detail > div { padding: 12px 0; border-top: 1px solid var(--border); }
+.package-detail > div:first-child { border-top: none; }
+.package-detail dt { font-size: .76rem; font-weight: 700; color: var(--gold-dark); letter-spacing: .03em; margin-bottom: 4px; }
+.package-detail dd { margin: 0; color: var(--text); font-size: .92rem; line-height: 1.7; }
+.package-card .btn { align-self: flex-start; }
+
+/* process give / receive */
+.step-io { list-style: none; padding: 0; margin: 10px 0 0; display: grid; gap: 4px; }
+.step-io li { font-size: .84rem; color: var(--text-muted); padding-left: 20px; position: relative; }
+.step-io li::before { content: "―"; position: absolute; left: 0; color: var(--gold-dark); }
+.step-io strong { color: var(--navy-deep); font-weight: 700; }
+
+/* case study stat placeholders */
+.case-study-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin: 26px 0; }
+.case-study-stat {
+  text-align: center;
+  background: var(--bg-alt);
+  border-radius: var(--radius-sm);
+  padding: 18px 10px;
+}
+.case-study-stat .stat-value { display: block; font-size: 1.5rem; font-weight: 800; color: var(--navy-deep); }
+.case-study-stat .stat-label { display: block; font-size: .78rem; color: var(--text-muted); margin-top: 4px; }
+
+/* responsive comparison table -> card layout on mobile */
+@media (max-width: 640px) {
+  .compare-table-wrap { overflow-x: visible; border: none; }
+  .compare-table { min-width: 0; display: block; }
+  .compare-table thead { display: none; }
+  .compare-table tbody { display: block; }
+  .compare-table tr {
+    display: block;
+    margin-bottom: 14px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+  }
+  .compare-table tbody th {
+    display: block;
+    width: auto;
+    background: var(--bg-alt);
+    border-bottom: 1px solid var(--border);
+  }
+  .compare-table td {
+    display: block;
+    border-bottom: 1px solid var(--border);
+  }
+  .compare-table tr:last-child { margin-bottom: 0; }
+  .compare-table td:last-child { border-bottom: none; }
+  .compare-table td::before {
+    content: attr(data-label);
+    display: block;
+    font-size: .72rem;
+    font-weight: 700;
+    color: var(--text-muted);
+    letter-spacing: .03em;
+    margin-bottom: 4px;
+  }
+}
+
+/* mobile sticky CTA */
+.sticky-cta {
+  display: none;
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 40;
+  background: rgba(255,255,255,0.97);
+  backdrop-filter: blur(6px);
+  border-top: 1px solid var(--border);
+  padding: 12px 16px;
+  box-shadow: 0 -8px 24px -12px rgba(10,22,40,0.25);
+}
+.sticky-cta .btn { display: block; width: 100%; text-align: center; padding: 14px 20px; }
 
 @media (max-width: 900px) {
   .hero-inner { grid-template-columns: 1fr; }
@@ -713,6 +801,8 @@ ul li { margin-bottom: 6px; }
   .deliverable-grid { grid-template-columns: 1fr 1fr; }
   .case-study-grid { grid-template-columns: 1fr 1fr; row-gap: 24px; }
   .case-study-step:nth-child(3) { padding-left: 0; border-left: none; }
+  .package-grid { grid-template-columns: 1fr; }
+  .case-study-stats { grid-template-columns: 1fr 1fr 1fr; }
 }
 
 @media (max-width: 760px) {
@@ -740,4 +830,11 @@ ul li { margin-bottom: 6px; }
   .case-study-step { padding-left: 0 !important; border-left: none !important; padding-bottom: 18px; }
   .case-study-card { padding: 28px 24px; }
   .compare-table th, .compare-table td { padding: 14px 16px; }
+  .faq-item summary { padding: 20px 4px; min-height: 24px; }
+  .faq-item { padding: 4px 18px; }
+  body[data-sticky-cta] { padding-bottom: 68px; }
+  body[data-sticky-cta] .sticky-cta { display: block; }
+  .case-study-stats { grid-template-columns: 1fr; gap: 10px; }
+  .case-study-stat { display: flex; align-items: center; justify-content: space-between; text-align: left; padding: 12px 18px; }
+  .case-study-stat .stat-value { font-size: 1.2rem; }
 }

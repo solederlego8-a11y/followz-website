@@ -53,6 +53,18 @@ description: "契約期間、成果が出るまでの期間、料金、対応業
         <summary>無料相談では何を聞かれますか？</summary>
         <p>現状の発信状況、抱えている課題、狙いたい顧客層、目標などをお伺いします。その場でのご契約を迫ることはありませんので、まずは気軽にご相談ください。</p>
       </details>
+      <details class="faq-item">
+        <summary>まだ依頼するか決めていませんが、相談だけでもいいですか？</summary>
+        <p>もちろんです。無料相談は「話を聞いてから検討したい」という段階でご利用いただくためのものです。ご相談後に無理に契約を勧めることはありませんので、現状の整理だけでもお気軽にお使いください。</p>
+      </details>
+      <details class="faq-item">
+        <summary>依頼する場合、社内での決裁や確認は何が必要ですか？</summary>
+        <p>特別な準備は不要です。多くの場合、ご担当者様が窓口となり、投稿内容の確認・承認のみお願いしています。契約前に稟議資料が必要な場合は、料金プランや支援内容をまとめた資料をお渡しできますので、その旨お申し付けください。</p>
+      </details>
+      <details class="faq-item">
+        <summary>BtoB企業でもThreadsは効果がありますか？</summary>
+        <p>はい。Threadsは拡散力より「業界内での日々の接点づくり」に向いた媒体です。BtoBでも、採用広報や日々の取り組み発信、業界内での認知拡大といった目的であれば効果が見込めます。バズを狙う運用とは異なるアプローチでご提案します。</p>
+      </details>
     </div>
   </div>
 </section>
@@ -60,6 +72,19 @@ description: "契約期間、成果が出るまでの期間、料金、対応業
 <section class="cta-section">
   <div class="wrap">
     <h2>その他のご質問はこちら</h2>
-    <a class="btn btn-primary" href="/contact/">お問い合わせはこちら</a>
+    <a class="btn btn-primary" href="/contact/" data-analytics-event="final_cta_click">お問い合わせはこちら</a>
   </div>
 </section>
+
+<script>
+document.querySelectorAll(".faq-item").forEach(function (item) {
+  var summary = item.querySelector("summary");
+  summary.setAttribute("aria-expanded", item.hasAttribute("open"));
+  item.addEventListener("toggle", function () {
+    summary.setAttribute("aria-expanded", item.hasAttribute("open"));
+    if (item.hasAttribute("open") && window.dataLayer) {
+      window.dataLayer.push({ event: "faq_open", faq_question: summary.textContent.trim() });
+    }
+  });
+});
+</script>

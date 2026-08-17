@@ -21,7 +21,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700;800&family=Zen+Kaku+Gothic+New:wght@500;700;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/css/style.css">
 </head>
-<body>
+<body{% if page.url != "/contact/" %} data-sticky-cta{% endif %}>
 <header class="site-header">
   <div class="wrap">
     <a class="brand" href="/">
@@ -75,5 +75,20 @@
     <p class="copyright">&copy; {{ "now" | date("yyyy") }} {{ site.name }}</p>
   </div>
 </footer>
+
+{% if page.url != "/contact/" %}
+<div class="sticky-cta">
+  <a class="btn btn-primary" href="/contact/" data-analytics-event="mid_cta_click">無料相談する</a>
+</div>
+{% endif %}
+
+<script>
+// アナリティクス連携の準備：GTM/GA導入後、dataLayer にイベントが流れます（未導入時は何もしません）
+document.addEventListener("click", function (e) {
+  var el = e.target.closest("[data-analytics-event]");
+  if (!el || !window.dataLayer) return;
+  window.dataLayer.push({ event: el.getAttribute("data-analytics-event") });
+});
+</script>
 </body>
 </html>
