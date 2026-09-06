@@ -10,6 +10,35 @@ layout: base.njk
 <section class="section">
   <div class="wrap wrap-narrow post-body">
     {{ content | safe }}
+
+    <aside class="post-cta">
+      <p class="post-cta-label">ご相談ください</p>
+      <h2>note・Threadsの運用、社内だけで抱え込んでいませんか？</h2>
+      <p>
+        フォローズ合同会社は、BtoB企業に特化したnote・Threads運用代行です。投稿前に必ず内容をご確認いただく体制で、発信の方針づくりから記事の執筆・運用までご一緒します。
+      </p>
+      <div class="cta-group">
+        <a class="btn btn-primary" href="/contact/" data-analytics-event="post_cta_click">無料で相談する</a>
+        <a class="btn btn-secondary" href="/service/" data-analytics-event="post_service_click">サービス内容を見る</a>
+      </div>
+      <p class="cta-note">まだ依頼を決めていない段階でも大丈夫です。「何から始めるべきか」を整理するだけのご相談も歓迎しています。</p>
+    </aside>
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="wrap">
+    <h2 class="related-heading">あわせて読みたい記事</h2>
+    <div class="related-grid">
+    {% for post in collections.blogPosts | relatedPosts(page.url, 3) %}
+      <article class="blog-card">
+        <h3><a href="{{ post.url }}">{{ post.data.title }}</a></h3>
+        <p class="blog-date">{{ post.data.date | date("yyyy年M月d日") }}</p>
+        <p>{{ post.data.description }}</p>
+        <a href="{{ post.url }}">続きを読む →</a>
+      </article>
+    {% endfor %}
+    </div>
     <p class="post-back"><a href="/blog/">← ブログ一覧に戻る</a></p>
   </div>
 </section>

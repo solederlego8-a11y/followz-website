@@ -8,6 +8,12 @@ module.exports = function (eleventyConfig) {
     return d.toISOString();
   });
 
+  eleventyConfig.addFilter("relatedPosts", (posts, currentUrl, limit) => {
+    return (posts || [])
+      .filter((post) => post.url !== currentUrl)
+      .slice(0, limit || 3);
+  });
+
   eleventyConfig.addPassthroughCopy("src/css");
   eleventyConfig.addPassthroughCopy("src/admin");
   eleventyConfig.addPassthroughCopy("src/robots.txt");

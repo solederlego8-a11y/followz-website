@@ -466,6 +466,35 @@ ul li { margin-bottom: 6px; }
 .post-body h2 { margin-top: 2em; font-size: 1.3rem; }
 .post-back { margin-top: 44px; }
 
+/* 記事末尾CTA */
+.post-cta {
+  margin-top: 64px;
+  padding: 38px 34px;
+  border: 1px solid var(--border);
+  border-top: 3px solid var(--navy);
+  border-radius: var(--radius);
+  background: var(--bg-alt);
+}
+.post-cta-label {
+  margin: 0 0 10px;
+  font-size: .78rem;
+  letter-spacing: .12em;
+  color: var(--text-muted);
+}
+.post-cta h2 { margin: 0 0 14px; font-size: 1.25rem; }
+.post-cta p { margin-bottom: 0; }
+.post-cta .cta-group { margin-top: 24px; }
+
+/* 関連記事 */
+.related-heading { font-size: 1.2rem; margin-bottom: 24px; }
+.related-grid { display: grid; gap: 20px; grid-template-columns: repeat(3, 1fr); }
+.related-grid .blog-card h3 { font-size: 1.02rem; margin-bottom: 6px; line-height: 1.5; }
+.related-grid .blog-card { padding: 24px; }
+@media (max-width: 900px) {
+  .related-grid { grid-template-columns: 1fr; }
+  .post-cta { padding: 30px 22px; }
+}
+
 /* faq accordion */
 .faq-list { display: grid; gap: 14px; }
 .faq-item {
@@ -533,6 +562,31 @@ ul li { margin-bottom: 6px; }
 }
 .hidden-field { display: none; }
 .thanks-section { text-align: center; padding: 120px 0; }
+.form-row input::placeholder, .form-row textarea::placeholder { color: #b3bac9; }
+.form-help { margin: 8px 0 0; font-size: .85rem; color: var(--text-muted); }
+.form-assurance { margin-top: 18px; font-size: .88rem; color: var(--text-muted); }
+
+/* お問い合わせ：相談例 */
+.contact-examples-heading { font-size: 1.15rem; margin-bottom: 18px; }
+.contact-examples { list-style: none; padding: 0; margin: 0; display: grid; gap: 12px; }
+.contact-examples li {
+  position: relative;
+  padding: 14px 18px 14px 42px;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+}
+.contact-examples li::before {
+  content: "";
+  position: absolute;
+  left: 20px;
+  top: 21px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--gold);
+}
+.contact-examples-note { margin-top: 18px; font-size: .9rem; color: var(--text-muted); }
 
 /* privacy */
 .policy-body h2 { margin-top: 1.8em; font-size: 1.15rem; }

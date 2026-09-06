@@ -18,6 +18,20 @@ description: "note運用代行・Threads運用代行に関するご相談・お�
   </div>
 </section>
 
+<section class="section section-alt">
+  <div class="wrap wrap-narrow">
+    <h2 class="contact-examples-heading">こんなご相談をよくいただきます</h2>
+    <ul class="contact-examples">
+      <li>note・Threadsを始めたいが、何から手をつければいいか分からない</li>
+      <li>社内で運用してきたが、更新が止まってしまった</li>
+      <li>発信は続けているが、問い合わせや商談につながっている実感がない</li>
+      <li>まずは費用感だけ知りたい（依頼するかはこれから検討したい）</li>
+      <li>自社に合うのは内製か代行か、判断材料がほしい</li>
+    </ul>
+    <p class="contact-examples-note">上記に当てはまらないご相談でも構いません。文章がまとまっていない状態のままお送りいただいても、こちらから整理してご返信します。</p>
+  </div>
+</section>
+
 <section class="section">
   <div class="wrap wrap-narrow">
     <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thanks/" class="contact-form">
@@ -28,35 +42,32 @@ description: "note運用代行・Threads運用代行に関するご相談・お�
 
       <div class="form-row">
         <label for="company">会社名<span class="required">必須</span></label>
-        <input type="text" id="company" name="company" required>
+        <input type="text" id="company" name="company" placeholder="例）株式会社フォローズ" required>
       </div>
 
       <div class="form-row">
         <label for="name">ご担当者名<span class="required">必須</span></label>
-        <input type="text" id="name" name="name" required>
+        <input type="text" id="name" name="name" placeholder="例）山田 太郎" required>
       </div>
 
       <div class="form-row">
         <label for="email">メールアドレス<span class="required">必須</span></label>
-        <input type="email" id="email" name="email" required>
+        <input type="email" id="email" name="email" placeholder="例）yamada@example.co.jp" required>
       </div>
 
       <div class="form-row">
         <label for="phone">電話番号<span class="optional">任意</span></label>
-        <input type="tel" id="phone" name="phone">
+        <input type="tel" id="phone" name="phone" placeholder="お電話でのご連絡をご希望の場合のみ">
       </div>
 
       <div class="form-row">
-        <label for="address">ご住所<span class="optional">任意</span></label>
-        <input type="text" id="address" name="address">
+        <label for="message">ご相談内容<span class="required">必須</span></label>
+        <textarea id="message" name="message" rows="6" placeholder="例）BtoBメーカーです。noteを始めたいのですが、社内に書ける人がおらず止まっています。まず何から決めるべきか相談したいです。" required></textarea>
+        <p class="form-help">箇条書きや一言だけでも構いません。詳しい状況はご返信のなかで伺います。</p>
       </div>
 
-      <div class="form-row">
-        <label for="message">お問い合わせ内容<span class="required">必須</span></label>
-        <textarea id="message" name="message" rows="6" required></textarea>
-      </div>
-
-      <button type="submit" class="btn btn-primary">送信する</button>
+      <button type="submit" class="btn btn-primary" data-analytics-event="contact_submit">送信する</button>
+      <p class="form-assurance">送信後、担当者より2営業日以内にメールでご返信します。しつこい営業のご連絡はいたしません。</p>
     </form>
   </div>
 </section>
