@@ -396,6 +396,27 @@ description: "BtoB企業向けnote運用代行・Threads運用代行の専門会
   </div>
 </section>
 
+<section class="section">
+  <div class="wrap">
+    <p class="section-eyebrow">BLOG</p>
+    <h2>note・Threads運用のお役立ち記事</h2>
+    <p class="lead">BtoB企業の発信でつまずきやすいポイントや、運用の考え方を記事にまとめています。</p>
+    <div class="related-grid">
+    {% for post in collections.blogPosts | relatedPosts("/", 3) %}
+      <article class="blog-card">
+        <h3><a href="{{ post.url }}" data-analytics-event="home_blog_click">{{ post.data.title }}</a></h3>
+        <p class="blog-date">{{ post.data.date | date("yyyy年M月d日") }}</p>
+        <p>{{ post.data.description }}</p>
+        <a href="{{ post.url }}">続きを読む →</a>
+      </article>
+    {% endfor %}
+    </div>
+    <div class="section-cta">
+      <a class="btn btn-secondary" href="/blog/">記事をすべて見る</a>
+    </div>
+  </div>
+</section>
+
 <section class="cta-section cta-with-image" style="--cta-bg: url('/images/stock/trust-handshake.jpg')">
   <div class="wrap">
     <h2>まずは現状の発信課題を、無料相談で聞かせてください。</h2>
