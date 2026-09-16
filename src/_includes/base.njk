@@ -3,6 +3,14 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- ga4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-KQ4656R9XE"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-KQ4656R9XE', { anonymize_ip: true });
+</script>
 <title>{{ title or site.defaultTitle }}</title>
 <meta name="description" content="{{ description or site.defaultDescription }}">
 <link rel="canonical" href="{{ site.url }}{{ page.url }}">
