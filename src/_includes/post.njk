@@ -11,6 +11,31 @@ layout: base.njk
   <div class="wrap wrap-narrow post-body">
     {{ content | safe }}
 
+    {%- if faq and faq.length %}
+    <section class="post-faq">
+      <h2>よくある質問</h2>
+      {%- for item in faq %}
+      <h3>{{ item.q }}</h3>
+      <p>{{ item.a }}</p>
+      {%- endfor %}
+    </section>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {%- for item in faq %}
+        {
+          "@type": "Question",
+          "name": {{ item.q | dump | safe }},
+          "acceptedAnswer": { "@type": "Answer", "text": {{ item.a | dump | safe }} }
+        }{% if not loop.last %},{% endif %}
+        {%- endfor %}
+      ]
+    }
+    </script>
+    {%- endif %}
+
     <aside class="post-cta">
       <p class="post-cta-label">ご相談ください</p>
       <h2>note・Threadsの運用、社内だけで抱え込んでいませんか？</h2>
