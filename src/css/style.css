@@ -892,3 +892,13 @@ ul li { margin-bottom: 6px; }
   .case-study-stat { display: flex; align-items: center; justify-content: space-between; text-align: left; padding: 12px 18px; }
   .case-study-stat .stat-value { font-size: 1.2rem; }
 }
+
+/* 記事内：30秒で判断ボックス／本文中CTA／表 */
+.post-meta { color: var(--text-muted); font-size: .86rem; margin: 0 0 18px; }
+.judge-box { border: 1px solid var(--border); border-left: 4px solid var(--gold); border-radius: var(--radius-sm); background: var(--bg-alt); padding: 18px 24px; margin: 0 0 20px; }
+.judge-box-label { margin: 0 0 8px; font-weight: 700; color: var(--navy-deep); }
+.judge-box ul { margin: 0; padding-left: 1.2em; }
+.inline-cta { border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 14px 20px; margin: 20px 0 28px; font-size: .95rem; }
+.post-body table { width: 100%; border-collapse: collapse; margin: 18px 0 28px; font-size: .9rem; display: block; overflow-x: auto; }
+.post-body th, .post-body td { border: 1px solid var(--border); padding: 10px 12px; text-align: left; vertical-align: top; }
+.post-body th { background: var(--bg-alt); color: var(--navy-deep); }
