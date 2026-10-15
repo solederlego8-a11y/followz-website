@@ -169,7 +169,7 @@ SNS運用代行には、企画・執筆・投稿・分析といった作業の�
 
 ## 次に読むなら
 
-- [広報担当1人でもnote・Threads運用代行は使える？](/blog/sns-agency-small-team-one-person/)：社内と外部の分担、月8万円〜プランの見方
+- [広報担当1人でもnote・Threads運用代行は使える？](/blog/sns-agency-small-team-one-person/)：社内と外部の分担、月5万円〜プランの見方
 - [SNS運用代行で成果が出ないときの見直し基準](/blog/sns-agency-results-review/)：3か月目に確認する5つの点
 - [運用代行の無料相談は何を準備する？](/blog/note-threads-agency-free-consultation-prep/)：相談前に決めておく5項目と当日の流れ
 
